@@ -7,7 +7,7 @@ target 'swift-tweetSentiment-lab' do
 
 
   # Pods for swift-tweetSentiment-lab
-
+    pod 'STTwitter'
   target 'swift-tweetSentiment-labTests' do
     inherit! :search_paths
     pod 'Quick'

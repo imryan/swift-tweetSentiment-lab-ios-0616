@@ -3,12 +3,13 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Analysis-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="swift_tweetSentiment_lab" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="swift_tweetSentiment_lab" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -17,38 +18,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="# ... " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hue-JW-w48">
-                                <rect key="frame" x="203" y="239" width="193" height="121.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@FlatironSchool" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Mw-5o-AFK">
+                                <rect key="frame" x="20" y="273" width="560" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="193" id="209-UX-h5T"/>
-                                    <constraint firstAttribute="height" constant="121.5" id="l2H-kj-QB0"/>
+                                    <constraint firstAttribute="height" constant="21" id="SP3-mE-ICf"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Polarity of Tweet" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TW6-ct-ys0">
-                                <rect key="frame" x="200.5" y="211" width="199.5" height="32.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fetching" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7T6-mC-KRx">
+                                <rect key="frame" x="20" y="302" width="560" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.68888300657272339" green="0.71366006135940552" blue="0.73448425531387329" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="TW6-ct-ys0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7Tf-eC-cZi"/>
-                            <constraint firstItem="Hue-JW-w48" firstAttribute="top" secondItem="TW6-ct-ys0" secondAttribute="bottom" constant="-4" id="BWg-ID-aH8"/>
-                            <constraint firstItem="Hue-JW-w48" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HCn-hh-kbD"/>
-                            <constraint firstItem="Hue-JW-w48" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Ovc-aO-Ouk"/>
+                            <constraint firstItem="2Mw-5o-AFK" firstAttribute="trailing" secondItem="7T6-mC-KRx" secondAttribute="trailing" id="MFx-kL-gCZ"/>
+                            <constraint firstItem="7T6-mC-KRx" firstAttribute="top" secondItem="2Mw-5o-AFK" secondAttribute="bottom" constant="8" symbolic="YES" id="MIQ-NH-Upa"/>
+                            <constraint firstItem="2Mw-5o-AFK" firstAttribute="leading" secondItem="7T6-mC-KRx" secondAttribute="leading" id="SLg-ty-1kO"/>
+                            <constraint firstItem="2Mw-5o-AFK" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="W8S-ny-FrE"/>
+                            <constraint firstItem="2Mw-5o-AFK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="keC-49-CuN"/>
+                            <constraint firstItem="2Mw-5o-AFK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="253" id="ruv-Js-00l"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Analysis" id="n8S-34-Fvx">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="UHS-IX-IWE">
+                            <color key="tintColor" red="0.19376453757286072" green="0.50850099325180054" blue="0.85232251882553101" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="reload" destination="BYZ-38-t0r" id="Mah-Z9-e2e"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="polarityScoreLabel" destination="Hue-JW-w48" id="fwT-HP-cOs"/>
+                        <outlet property="polarityLabel" destination="7T6-mC-KRx" id="uVK-qj-fmp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="352" y="230"/>
+            <point key="canvasLocation" x="508" y="114"/>
         </scene>
     </scenes>
 </document>
